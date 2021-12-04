@@ -12,9 +12,9 @@ app.get('/recommendation', (req, res) => {
   console.log('recommendation request');
 });
 
-app.get('/prompt/:prompt', (req, res) => {
+app.get('/:prompt', (req, res) => {
   // Users artwork attached to this prompt gets sent back here.
 });
-app.post('/prompt/:prompt', (req, res) => {
+app.post('/:prompt', (req, res) => {
   // User can add a post to a prompt here.
 });
