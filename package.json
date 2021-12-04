@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Spec-nology/Arterator-server/issues"
   },
-  "homepage": "https://github.com/Spec-nology/Arterator-server#readme"
+  "homepage": "https://github.com/Spec-nology/Arterator-server#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
 }
