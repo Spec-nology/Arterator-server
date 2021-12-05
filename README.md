@@ -1,7 +1,41 @@
-# Arterator-server
+# Arterator-server.
 
-| Method | Route           | returns                                                                                                                                                                                              |
-| ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GET    | /               | welcome message                                                                                                                                                                                      |
-| GET    | /recommendation | <code> {<br>&nbsp;"prompt": string, <br>&nbsp;&nbsp;input: {<br>&nbsp;&nbsp;&nbsp;mood: string <br> &nbsp;&nbsp;&nbsp;colours: string <br>&nbsp;&nbsp;&nbsp;tbc: string <br>&nbsp;&nbsp;}<br>}<code> |
-| POST   | /:prompt        | 201                                                                                                                                                                                                  |
+## Installation & Usage.
+
+### Installation.
+
+- Clone down this repo.
+- In your terminal `cd `
+- in your terminal `NPM install`
+
+## Usage.
+
+- To start server `NPM run dev`
+- the server will now be running on port 3000
+
+## Routes.
+
+| Method | Route           | Description                                | Returns                                    |
+| ------ | --------------- | ------------------------------------------ | ------------------------------------------ |
+| GET    | /               | Home route.                                | Welcome message.                           |
+| GET    | /recommendation | Get a recommendation based on users input. | [See data structures](#Recommendations.)   |
+| POST   | /:prompt        | Post a users artwork.                      | 201                                        |
+| GET    | /:prompt        | Gets all user posts based on prompt.       | All artwork uploaded to a specific prompt. |
+
+## Data Structures.
+
+#### Recommendations.
+
+```json
+// JSON.
+{
+  "prompt": "string",
+  "userInput": {
+    "mood": "string",
+    "colours": "string",
+    "tbc": "string"
+  },
+  "timesPromptRequested": "int",
+  "urlToPrompt": "string"
+}
+```
