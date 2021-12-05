@@ -27,7 +27,6 @@
 #### Recommendations.
 
 ```json
-// JSON.
 {
   "prompt": "string",
   "userInput": {
