@@ -5,7 +5,7 @@
 ### Installation.
 
 - Clone down this repo.
-- In your terminal `cd `
+- In your terminal `cd Arterator-server`
 - in your terminal `NPM install`
 
 ## Usage.
@@ -18,7 +18,7 @@
 | Method | Route           | Description                                | Returns                                    |
 | ------ | --------------- | ------------------------------------------ | ------------------------------------------ |
 | GET    | /               | Home route.                                | Welcome message.                           |
-| GET    | /recommendation | Get a recommendation based on users input. | [See data structures](#Recommendations.)   |
+| GET    | /recommendation | Get a recommendation based on users input. | [See data structures](#data-structures)   |
 | POST   | /:prompt        | Post a users artwork.                      | 201                                        |
 | GET    | /:prompt        | Gets all user posts based on prompt.       | All artwork uploaded to a specific prompt. |
 
@@ -27,7 +27,6 @@
 #### Recommendations.
 
 ```json
-// JSON.
 {
   "prompt": "string",
   "userInput": {
