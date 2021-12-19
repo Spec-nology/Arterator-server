@@ -8,7 +8,6 @@ function sql(file) {
 
 const dbInit = async (db) => {
   try {
-    console.log('trig');
     await db.none(sql('init.SQL'));
   } catch (error) {
     console.log(error);
