@@ -11,5 +11,4 @@ DROP TABLE IF EXISTS tags;
 CREATE TABLE tags (
 	tagId SERIAL PRIMARY KEY,
     tagName VARCHAR(255)
-    catagory int FOREIGN KEY REFERENCES catagories(catagoryId)
 );

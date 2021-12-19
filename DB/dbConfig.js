@@ -1,17 +1,30 @@
 require('dotenv').config();
+const { join: joinPath } = require('path');
+const pgp = require('pg-promise')();
 
-const db;
+let ssl = { rejectUnauthorized: false };
 
-// The below conditions change the environment and behavior or our DB depending on the setup in the .env file.
+const config = {
+  connectionString: process.env.DB_URI,
+  max: 30,
+  ssl: ssl,
+};
 
-if (process.env.RESET_DB === 'true') {
-  // Run the SQL file to reset the database.
+const db = pgp(config);
+
+function sql(file) {
+  const fullPath = joinPath(__dirname, file); // generating full path;
+  return new pgp.QueryFile(fullPath, { minify: true });
 }
 
-if (process.env.DEV === 'true') {
-  // Connect to DB one.
-} else {
-  // connect to the live DB.
-}
+db.none(sql('init.SQL'))
+  .then(function (data) {
+    console.log(data);
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error);
+  });
 
-module.exports = db
+console.log(sql('init.SQL'));
+
+module.exports = db;

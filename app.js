@@ -2,10 +2,19 @@ const app = require('./index');
 const port = process.env.PORT || 3000;
 const helpers = require('./helpers');
 
+const db = require('./DB/dbConfig');
+
 const promptRoutes = require('./routes/prompts.js');
 app.use('/prompt', promptRoutes);
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  try {
+    const response = await db.any('SELECT * FROM tags');
+    console.log(response);
+  } catch (error) {
+    console.log('error');
+  }
+
   res.send('welcome to our art API');
 });
 
