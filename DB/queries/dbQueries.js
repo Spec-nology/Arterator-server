@@ -26,7 +26,7 @@ const dbSeed = async (db) => {
 const getTagsWithCategories = async (db) => {
   try {
     const result = await db.any(sql('tagsWithCategories.SQL'));
-    console.log(result);
+
     return result;
   } catch (error) {
     console.log(error);
@@ -35,7 +35,8 @@ const getTagsWithCategories = async (db) => {
 
 const getAllCatagories = async (db) => {
   try {
-    await db.none(sql('dbSeed.SQL'));
+    const result = await db.any(sql('getAllCategories.SQL'));
+    return result;
   } catch (error) {
     console.log(error);
   }
@@ -43,10 +44,17 @@ const getAllCatagories = async (db) => {
 
 const getAllTags = async (db) => {
   try {
-    await db.none(sql('dbSeed.SQL'));
+    const result = await db.any(sql('getAllTags.SQL'));
+    return result;
   } catch (error) {
     console.log(error);
   }
 };
 
-module.exports = { dbInit, dbSeed, getTagsWithCategories };
+module.exports = {
+  dbInit,
+  dbSeed,
+  getTagsWithCategories,
+  getAllCatagories,
+  getAllTags,
+};
