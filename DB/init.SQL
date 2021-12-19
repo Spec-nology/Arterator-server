@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS catagories;
+DROP TABLE IF EXISTS catagories cascade;
 
 CREATE TABLE catagories (
 	catagoryId SERIAL PRIMARY KEY,
@@ -10,5 +10,8 @@ DROP TABLE IF EXISTS tags;
 
 CREATE TABLE tags (
 	tagId SERIAL PRIMARY KEY,
-    tagName VARCHAR(255)
+    tagName VARCHAR(255),
+    catagoryId int,
+    FOREIGN KEY (catagoryId) REFERENCES catagories(catagoryId) 
+
 );

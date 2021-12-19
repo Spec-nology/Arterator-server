@@ -25,6 +25,12 @@ db.none(sql('init.SQL'))
     console.log('ERROR:', error);
   });
 
-console.log(sql('init.SQL'));
+db.one(sql('dbSeed.SQL'))
+  .then(function (data) {
+    console.log(data);
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error);
+  });
 
 module.exports = db;
