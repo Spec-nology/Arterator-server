@@ -3,9 +3,8 @@ const CategoriesAndTags = require('../models/catagories');
 
 const index = async (req, res) => {
   try {
-    const init = await CategoriesAndTags.getAllCategoriesAndTags;
-    console.log(init);
-    res.status(200).send(init);
+    const result = await CategoriesAndTags.getAllCategoriesAndTags;
+    res.status(200).send(result);
   } catch (error) {
     res.status(500).send('oops');
   }

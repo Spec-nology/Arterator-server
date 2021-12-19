@@ -7,6 +7,9 @@ const db = require('./DB/dbConfig');
 const promptRoutes = require('./routes/prompts.js');
 app.use('/prompt', promptRoutes);
 
+const categoryRoutes = require('./routes/categories.js');
+app.use('/categories', categoryRoutes);
+
 app.get('/', async (req, res) => {
   try {
     const response = await db.any('SELECT * FROM tags');

@@ -1,6 +1,7 @@
 require('dotenv').config();
-const { join: joinPath } = require('path');
+// const { join: joinPath } = require('path');
 const pgp = require('pg-promise')();
+// const dbQueries = require('./queries/dbQueries');
 
 let ssl = { rejectUnauthorized: false };
 
@@ -10,27 +11,10 @@ const config = {
   ssl: ssl,
 };
 
-const db = pgp(config);
+// const db = pgp(config);
+// console.log(db);
 
-function sql(file) {
-  const fullPath = joinPath(__dirname, file); // generating full path;
-  return new pgp.QueryFile(fullPath, { minify: true });
-}
+// dbQueries.dbInit();
+// dbQueries.dbSeed();
 
-db.none(sql('init.SQL'))
-  .then(function (data) {
-    console.log(data);
-  })
-  .catch(function (error) {
-    console.log('ERROR:', error);
-  });
-
-db.one(sql('dbSeed.SQL'))
-  .then(function (data) {
-    console.log(data);
-  })
-  .catch(function (error) {
-    console.log('ERROR:', error);
-  });
-
-module.exports = db;
+module.exports = pgp(config);
