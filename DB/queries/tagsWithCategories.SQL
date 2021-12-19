@@ -1,3 +1,3 @@
-SELECT tags.tagName, catagories.catagoryName
+SELECT tags.tagName, categories.categoryName
 FROM tags
-INNER JOIN catagories ON tags.catagoryId=catagories.catagoryId;
+INNER JOIN categories ON tags.categoryId=categories.categoryId;

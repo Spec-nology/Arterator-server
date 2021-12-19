@@ -1,5 +1,5 @@
 // TODO bring in the model.
-const CategoriesAndTags = require('../models/catagories');
+const CategoriesAndTags = require('../models/categories');
 
 const getCatagoriesAndTags = async (req, res) => {
   try {

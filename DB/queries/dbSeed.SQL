@@ -1,4 +1,4 @@
-INSERT INTO catagories (catagoryName)
+INSERT INTO categories (categoryName)
 VALUES
     ('style'),
     ('medium'),
@@ -7,44 +7,44 @@ VALUES
     ('test'),
     ('color palette');
 
-INSERT INTO tags (tagName, catagoryId)
+INSERT INTO tags (tagName, categoryId)
 VALUES
-    ('cubism', (SELECT catagoryId from catagories WHERE catagoryName='style')),
-    ('art nouveau', (SELECT catagoryId from catagories WHERE catagoryName='style')),
-    ('pop art', (SELECT catagoryId from catagories WHERE catagoryName='style')),
-    ('expressionism', (SELECT catagoryId from catagories WHERE catagoryName='style')),
-    ('futurism', (SELECT catagoryId from catagories WHERE catagoryName='style')),
-    ('surrealism', (SELECT catagoryId from catagories WHERE catagoryName='style')),
-    ('other', (SELECT catagoryId from catagories WHERE catagoryName='style')),
+    ('cubism', (SELECT categoryId from categories WHERE categoryName='style')),
+    ('art nouveau', (SELECT categoryId from categories WHERE categoryName='style')),
+    ('pop art', (SELECT categoryId from categories WHERE categoryName='style')),
+    ('expressionism', (SELECT categoryId from categories WHERE categoryName='style')),
+    ('futurism', (SELECT categoryId from categories WHERE categoryName='style')),
+    ('surrealism', (SELECT categoryId from categories WHERE categoryName='style')),
+    ('other', (SELECT categoryId from categories WHERE categoryName='style')),
 
-    ('pencils', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('oils', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('pastels', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('inks', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('collage', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('watercolour', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('digital', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
-    ('other', (SELECT catagoryId from catagories WHERE catagoryName='medium')),
+    ('pencils', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('oils', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('pastels', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('inks', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('collage', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('watercolour', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('digital', (SELECT categoryId from categories WHERE categoryName='medium')),
+    ('other', (SELECT categoryId from categories WHERE categoryName='medium')),
 
-    ('happy', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('gloomy', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('distracted', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('anxious', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('joyful', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('bright', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('busy', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
-    ('other', (SELECT catagoryId from catagories WHERE catagoryName='mood')),
+    ('happy', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('gloomy', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('distracted', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('anxious', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('joyful', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('bright', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('busy', (SELECT categoryId from categories WHERE categoryName='mood')),
+    ('other', (SELECT categoryId from categories WHERE categoryName='mood')),
 
-    ('people', (SELECT catagoryId from catagories WHERE catagoryName='subject')),
-    ('animals', (SELECT catagoryId from catagories WHERE catagoryName='subject')),
-    ('places', (SELECT catagoryId from catagories WHERE catagoryName='subject')),
-    ('still life', (SELECT catagoryId from catagories WHERE catagoryName='subject')),
-    ('landscapes', (SELECT catagoryId from catagories WHERE catagoryName='subject')),
-    ('other', (SELECT catagoryId from catagories WHERE catagoryName='subject')),
+    ('people', (SELECT categoryId from categories WHERE categoryName='subject')),
+    ('animals', (SELECT categoryId from categories WHERE categoryName='subject')),
+    ('places', (SELECT categoryId from categories WHERE categoryName='subject')),
+    ('still life', (SELECT categoryId from categories WHERE categoryName='subject')),
+    ('landscapes', (SELECT categoryId from categories WHERE categoryName='subject')),
+    ('other', (SELECT categoryId from categories WHERE categoryName='subject')),
 
-    ('pastels', (SELECT catagoryId from catagories WHERE catagoryName='color palette')),
-    ('greys', (SELECT catagoryId from catagories WHERE catagoryName='color palette')),
-    ('muted', (SELECT catagoryId from catagories WHERE catagoryName='color palette')),
-    ('duo tone', (SELECT catagoryId from catagories WHERE catagoryName='color palette')),
-    ('other', (SELECT catagoryId from catagories WHERE catagoryName='color palette'));
+    ('pastels', (SELECT categoryId from categories WHERE categoryName='color palette')),
+    ('greys', (SELECT categoryId from categories WHERE categoryName='color palette')),
+    ('muted', (SELECT categoryId from categories WHERE categoryName='color palette')),
+    ('duo tone', (SELECT categoryId from categories WHERE categoryName='color palette')),
+    ('other', (SELECT categoryId from categories WHERE categoryName='color palette'));
 
