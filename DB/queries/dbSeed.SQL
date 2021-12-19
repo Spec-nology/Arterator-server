@@ -4,7 +4,6 @@ VALUES
     ('medium'),
     ('mood'),
     ('subject'),
-    ('test'),
     ('color palette');
 
 INSERT INTO tags (tagName, categoryId)
