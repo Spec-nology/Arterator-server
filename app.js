@@ -12,14 +12,7 @@ const categoryRoutes = require('./routes/categories.js');
 app.use('/categories', categoryRoutes);
 
 app.get('/', async (req, res) => {
-  try {
-    const response = await db.any('SELECT * FROM tags');
-    console.log(response);
-  } catch (error) {
-    console.log('error');
-  }
-
-  res.send('welcome to our art API');
+  res.send(`welcome to our art API`);
 });
 
 app.get('/recommendation', (req, res) => {

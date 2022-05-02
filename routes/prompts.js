@@ -3,6 +3,6 @@ const router = express.Router();
 
 const promptController = require('../controllers/prompts');
 
-router.get('/', promptController.index);
+router.post('/', promptController.getPromptFromRequestForm);
 
 module.exports = router;

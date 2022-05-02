@@ -1,14 +1,16 @@
 // TODO bring in the model.
-const CategoriesAndTags = require('../models/categories');
+const Prompts = require('../models/prompts');
 
-const index = async (req, res) => {
-  try {
-    const init = await CategoriesAndTags.getAllCategoriesAndTags;
-    console.log(init);
-    res.status(200).send(init);
-  } catch (error) {
-    res.status(500).send('oops');
-  }
+const getRandomPrompt = async (req, res) => {
+    const prompt = Prompts.getRandomPrompt();
+    console.log(req.body);
+    res.status(200).send(prompt);
 };
 
-module.exports = { index };
+const getPromptFromRequestForm = async (req, res) => {
+    const prompt = Prompts.getPromptFromRequestForm(req.body);
+    console.log(req.body);
+    res.status(200).send(prompt);
+};
+
+module.exports = { getRandomPrompt, getPromptFromRequestForm };
