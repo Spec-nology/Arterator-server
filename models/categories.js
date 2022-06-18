@@ -10,6 +10,7 @@ const { formatTagData } = require('./helpers');
 
 class CatagoriesAndTags {
   constructor(data) {}
+
   static get getAllCategoriesAndTags() {
     return new Promise(async (resolve, reject) => {
       try {
