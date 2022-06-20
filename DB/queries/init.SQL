@@ -13,11 +13,6 @@ CREATE TABLE tags (
     FOREIGN KEY (categoryId) REFERENCES categories(categoryId) 
 );
 
-DROP TABLE IF EXISTS moods CASCADE;
-CREATE TABLE moods (
-    mood_id SERIAL PRIMARY KEY,
-    mood_name VARCHAR(255)
-);
 
 DROP TABLE IF EXISTS prompt_fragments_categories CASCADE;
 CREATE TABLE prompt_fragments_categories (
@@ -34,4 +29,16 @@ CREATE TABLE prompt_fragments (
     FOREIGN KEY (prompt_fragment_category_id) REFERENCES prompt_fragments_categories(prompt_fragment_category_id) 
 );
 
+DROP TABLE IF EXISTS prompt_fragment_tags CASCADE;
+CREATE TABLE prompt_fragment_tags (
+    prompt_fragment_tag_id SERIAL PRIMARY KEY,
+    tag_id int,
+    prompt_fragment_id int,
+    FOREIGN KEY (tag_id) REFERENCES tags(tagId) ,
+    FOREIGN KEY (prompt_fragment_id) REFERENCES prompt_fragments(prompt_fragment_id) 
+);
 
+-- this doesnt work yet.
+-- SELECT tags.tagName, prompt_fragments.prompt_fragment_text
+-- FROM tags
+-- INNER JOIN prompt_fragments ON tags.tagId=prompt_fragments.prompt_fragment_id;
