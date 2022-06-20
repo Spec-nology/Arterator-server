@@ -19,25 +19,19 @@ CREATE TABLE moods (
     mood_name VARCHAR(255)
 );
 
+DROP TABLE IF EXISTS prompt_fragments_categories CASCADE;
+CREATE TABLE prompt_fragments_categories (
+    prompt_fragment_category_id SERIAL PRIMARY KEY,
+    prompt_fragment_category VARCHAR(255)
+);
+
+
 DROP TABLE IF EXISTS prompt_fragments CASCADE;
 CREATE TABLE prompt_fragments (
     prompt_fragment_id SERIAL PRIMARY KEY,
-    prompt_fragment_name VARCHAR(255)
+    prompt_fragment_text VARCHAR(255),
+    prompt_fragment_category_id int,
+    FOREIGN KEY (prompt_fragment_category_id) REFERENCES prompt_fragments_categories(prompt_fragment_category_id) 
 );
 
-DROP TABLE IF EXISTS prompt_fragment_moods CASCADE;
-CREATE TABLE prompt_fragment_moods (
-    prompt_fragment_id SERIAL PRIMARY KEY,
-    mood_id int,
-    FOREIGN KEY (prompt_fragment_id) REFERENCES prompt_fragments(prompt_fragment_id), 
-    FOREIGN KEY (mood_id) REFERENCES moods(mood_id) 
-);
-
-DROP TABLE IF EXISTS subjects CASCADE;
-CREATE TABLE subjects (
-    subject_id SERIAL PRIMARY KEY,
-    subject_text VARCHAR(255),
-    subject_tag_id int,
-    FOREIGN KEY (subject_tag_id) REFERENCES tags(tagId) 
-);
 
