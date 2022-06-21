@@ -38,7 +38,26 @@ CREATE TABLE prompt_fragment_tags (
     FOREIGN KEY (prompt_fragment_id) REFERENCES prompt_fragments(prompt_fragment_id) 
 );
 
--- this doesnt work yet.
--- SELECT tags.tagName, prompt_fragments.prompt_fragment_text
--- FROM tags
--- INNER JOIN prompt_fragments ON tags.tagId=prompt_fragments.prompt_fragment_id;
+
+
+-- Get all tags and text
+SELECT tags.tagName, prompt_fragment_text AS text_content, prompt_fragment_category
+FROM prompt_fragment_tags
+INNER JOIN tags
+ON tags.tagId=prompt_fragment_tags.tag_id
+INNER JOIN prompt_fragments
+ON prompt_fragments.prompt_fragment_id = prompt_fragment_tags.prompt_fragment_id
+INNER JOIN prompt_fragments_categories
+ON prompt_fragments.prompt_fragment_category_id = prompt_fragments_categories.prompt_fragment_category_id
+
+
+-- get tags text and fragment type, filtered by the tag name.
+SELECT tags.tagName, prompt_fragment_text AS text_content, prompt_fragment_category
+FROM prompt_fragment_tags
+INNER JOIN tags
+ON tags.tagId=prompt_fragment_tags.tag_id
+INNER JOIN prompt_fragments
+ON prompt_fragments.prompt_fragment_id = prompt_fragment_tags.prompt_fragment_id
+INNER JOIN prompt_fragments_categories
+ON prompt_fragments.prompt_fragment_category_id = prompt_fragments_categories.prompt_fragment_category_id
+WHERE tagName = 'happy';

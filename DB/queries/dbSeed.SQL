@@ -105,3 +105,21 @@ VALUES (
     (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='sitting in the park'),
     (SELECT tagId FROM tags WHERE tagName='happy')
 );
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='and its raining'),
+    (SELECT tagId FROM tags WHERE tagName='gloomy')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='and its raining'),
+    (SELECT tagId FROM tags WHERE tagName='distracted')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='and its raining'),
+    (SELECT tagId FROM tags WHERE tagName='anxious')
+);
