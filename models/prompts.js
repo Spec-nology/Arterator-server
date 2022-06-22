@@ -1,5 +1,6 @@
 const db = require('../DB/dbConfig');
 const { getPrompt } = require('../helpers');
+const { getAllPromptFragments, getAllPromptFragmentsByTagName } = require('../DB/queries/dbQueries');
 
 class Prompts {
     constructor(data) {
@@ -21,6 +22,14 @@ class Prompts {
         return {
             prompt: getPrompt(data),
         };
+    }
+
+    static getAllPromptFragments() {
+        return getAllPromptFragments(db);
+    }
+
+    static getPromptFragmentsByTagName(tagName) {
+        return getAllPromptFragmentsByTagName(db, tagName);
     }
 }
 

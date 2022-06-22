@@ -123,3 +123,9 @@ VALUES (
     (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='and its raining'),
     (SELECT tagId FROM tags WHERE tagName='anxious')
 );
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='looking into the distance'),
+    (SELECT tagId FROM tags WHERE tagName='anxious')
+);
