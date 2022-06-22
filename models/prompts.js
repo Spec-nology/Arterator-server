@@ -12,16 +12,8 @@ class Prompts {
         // this.subject = subject;
     }
 
-    static getRandomPrompt() {
-        return {
-            prompt: getPrompt(),
-        };
-    }
-
-    static getPromptFromRequestForm(data) {
-        return {
-            prompt: getPrompt(data),
-        };
+    static async getPromptFromRequestForm(data) {
+        return { prompt: await getPrompt(data) };
     }
 
     static getAllPromptFragments() {

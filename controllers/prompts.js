@@ -8,8 +8,7 @@ const getRandomPrompt = async (req, res) => {
 };
 
 const getPromptFromRequestForm = async (req, res) => {
-    const prompt = Prompts.getPromptFromRequestForm(req.body);
-    console.log(req.body);
+    const prompt = await Prompts.getPromptFromRequestForm(req.body);
     res.status(200).send(prompt);
 };
 

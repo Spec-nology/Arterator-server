@@ -67,6 +67,10 @@ VALUES
     (SELECT prompt_fragment_category_id FROM prompt_fragments_categories WHERE prompt_fragment_category='subjects')),
     ('the postman',
     (SELECT prompt_fragment_category_id FROM prompt_fragments_categories WHERE prompt_fragment_category='subjects')),
+    ('spilt milk',
+    (SELECT prompt_fragment_category_id FROM prompt_fragments_categories WHERE prompt_fragment_category='subjects')),
+    ('a woman in hospital gown',
+    (SELECT prompt_fragment_category_id FROM prompt_fragments_categories WHERE prompt_fragment_category='subjects')),
 
     ('at a football match',
     (SELECT prompt_fragment_category_id FROM prompt_fragments_categories WHERE prompt_fragment_category='locations')),
@@ -127,5 +131,101 @@ VALUES (
 INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
 VALUES (
     (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='looking into the distance'),
+    (SELECT tagId FROM tags WHERE tagName='anxious')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a mother and daughter'),
+    (SELECT tagId FROM tags WHERE tagName='happy')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a mother and daughter'),
+    (SELECT tagId FROM tags WHERE tagName='people')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a mother and daughter'),
+    (SELECT tagId FROM tags WHERE tagName='joyful')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a dog'),
+    (SELECT tagId FROM tags WHERE tagName='happy')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a dog'),
+    (SELECT tagId FROM tags WHERE tagName='joyful')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a dog'),
+    (SELECT tagId FROM tags WHERE tagName='joyful')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='spilt milk'),
+    (SELECT tagId FROM tags WHERE tagName='gloomy')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='in a coffee shop'),
+    (SELECT tagId FROM tags WHERE tagName='happy')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='in a coffee shop'),
+    (SELECT tagId FROM tags WHERE tagName='distracted')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='in a coffee shop'),
+    (SELECT tagId FROM tags WHERE tagName='gloomy')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='in a coffee shop'),
+    (SELECT tagId FROM tags WHERE tagName='bright')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a dog'),
+    (SELECT tagId FROM tags WHERE tagName='animals')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a cat'),
+    (SELECT tagId FROM tags WHERE tagName='animals')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a fox'),
+    (SELECT tagId FROM tags WHERE tagName='animals')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a woman in hospital gown'),
+    (SELECT tagId FROM tags WHERE tagName='people')
+);
+
+INSERT INTO prompt_fragment_tags (prompt_fragment_id, tag_id)
+VALUES (
+    (SELECT prompt_fragment_id FROM prompt_fragments WHERE prompt_fragment_text='a woman in hospital gown'),
     (SELECT tagId FROM tags WHERE tagName='anxious')
 );
