@@ -1,5 +1,6 @@
 const db = require('../DB/dbConfig');
 const { getPrompt } = require('../helpers');
+const { getAllPromptFragments, getAllPromptFragmentsByTagName } = require('../DB/queries/dbQueries');
 
 class Prompts {
     constructor(data) {
@@ -11,16 +12,16 @@ class Prompts {
         // this.subject = subject;
     }
 
-    static getRandomPrompt() {
-        return {
-            prompt: getPrompt(),
-        };
+    static async getPromptFromRequestForm(data) {
+        return { prompt: await getPrompt(data) };
     }
 
-    static getPromptFromRequestForm(data) {
-        return {
-            prompt: getPrompt(data),
-        };
+    static getAllPromptFragments() {
+        return getAllPromptFragments(db);
+    }
+
+    static getPromptFragmentsByTagName(tagName) {
+        return getAllPromptFragmentsByTagName(db, tagName);
     }
 }
 
