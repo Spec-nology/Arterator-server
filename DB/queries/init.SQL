@@ -1,11 +1,14 @@
+DROP TABLE IF EXISTS catagories cascade;
 DROP TABLE IF EXISTS categories cascade;
+
 CREATE TABLE categories (
 	categoryId SERIAL PRIMARY KEY,
     categoryName VARCHAR(255)
 );
 
 
-DROP TABLE IF EXISTS tags CASCADE;
+DROP TABLE IF EXISTS tags;
+
 CREATE TABLE tags (
 	tagId SERIAL PRIMARY KEY,
     tagName VARCHAR(255),
@@ -61,3 +64,4 @@ ON prompt_fragments.prompt_fragment_id = prompt_fragment_tags.prompt_fragment_id
 INNER JOIN prompt_fragments_categories
 ON prompt_fragments.prompt_fragment_category_id = prompt_fragments_categories.prompt_fragment_category_id
 WHERE tagName = 'happy';
+
