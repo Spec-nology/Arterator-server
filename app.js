@@ -1,6 +1,8 @@
 const app = require('./index');
 const port = process.env.PORT || 3000;
 const helpers = require('./helpers');
+const { readFile } = require('./data/parseDatasource');
+const { seedCategories } = require('./DB/queries/seedDatabase');
 
 const db = require('./DB/dbConfig');
 const dbQueries = require('./DB/queries/dbQueries');
@@ -9,6 +11,7 @@ const promptRoutes = require('./routes/prompts.js');
 app.use('/prompt', promptRoutes);
 
 const categoryRoutes = require('./routes/categories.js');
+const Prompts = require('./models/prompts');
 app.use('/categories', categoryRoutes);
 
 app.get('/', async (req, res) => {
@@ -23,10 +26,11 @@ if (process.env.DEV === 'true') {
     app.get('/resetDB', async (req, res) => {
         try {
             await dbQueries.dbInit(db);
-            await dbQueries.dbSeed(db);
+            await Prompts.seedDatabase();
+
             res.status(200).send('DB reset');
         } catch (error) {
-            res.status(500).send('Error resetting DB', error);
+            res.status(500).send('Error resetting DB');
         }
     });
 }

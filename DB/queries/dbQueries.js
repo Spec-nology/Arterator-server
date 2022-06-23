@@ -57,7 +57,7 @@ const getAllPromptFragments = async db => {
         );
         return promptFragments;
     } catch (error) {
-        throw new Error('Error finding prompt fragments');
+        console.log(error);
     }
 };
 
