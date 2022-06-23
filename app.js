@@ -1,8 +1,6 @@
 const app = require('./index');
 const port = process.env.PORT || 3000;
 const helpers = require('./helpers');
-const { readFile } = require('./data/parseDatasource');
-const { seedCategories } = require('./DB/queries/seedDatabase');
 
 const db = require('./DB/dbConfig');
 const dbQueries = require('./DB/queries/dbQueries');
