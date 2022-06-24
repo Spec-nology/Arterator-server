@@ -1,6 +1,8 @@
 const app = require('./index');
 const port = process.env.PORT || 3000;
 const helpers = require('./helpers');
+var cors = require('cors');
+app.use(cors());
 
 const db = require('./DB/dbConfig');
 const dbQueries = require('./DB/queries/dbQueries');
