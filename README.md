@@ -15,6 +15,13 @@ The API can be found [here](https://arterator.herokuapp.com/)
 -   To start server `NPM run dev`
 -   the server will now be running on port 3000
 
+## Database.
+
+The database schema can be viewed [here](https://dbdiagram.io/d/62b614bd69be0b672c3a78b5)
+The database parses the .csv files in `/data/datasources`
+To seed the database the heroku environment variable `DEV` must be set to `true` then preform `GET /resetdb`
+If the process is successful you will receive the response `DB reset`
+
 ## Routes.
 
 | Method | Route                          | Description                                          | Returns                                    |
