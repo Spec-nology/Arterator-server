@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+var cors = require('cors');
 
 const categoriesController = require('../controllers/categories');
 
