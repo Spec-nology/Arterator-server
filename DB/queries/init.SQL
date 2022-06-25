@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS catagories cascade;
 DROP TABLE IF EXISTS categories cascade;
 
 CREATE TABLE categories (
@@ -7,7 +6,7 @@ CREATE TABLE categories (
 );
 
 
-DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS tags cascade;
 
 CREATE TABLE tags (
 	tagId SERIAL PRIMARY KEY,
