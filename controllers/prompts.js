@@ -1,4 +1,3 @@
-// TODO bring in the model.
 const Prompts = require('../models/prompts');
 
 const getRandomPrompt = async (req, res) => {
