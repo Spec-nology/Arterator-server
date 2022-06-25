@@ -7,7 +7,12 @@ class Prompts {
     constructor(data) {}
 
     static async getPromptFromRequestForm(data) {
-        return { prompt: await getPrompt(data) };
+        try {
+            const prompt = await getPrompt(data);
+            return { prompt: prompt };
+        } catch (error) {
+            return error;
+        }
     }
 
     static getAllPromptFragments() {
