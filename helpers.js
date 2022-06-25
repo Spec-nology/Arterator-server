@@ -19,19 +19,27 @@ const generatePrompt = (subject, location, theBut, theButTwo) => {
 };
 
 const getPrompt = async options => {
-    const subjects = await getAllPromptFragmentsByTagName(db, options.subject);
-    const locations = await getAllPromptFragmentsByTagName(db, options.mood);
+    try {
+        const subjects = await getAllPromptFragmentsByTagName(db, options.subject);
+        const locations = await getAllPromptFragmentsByTagName(db, options.mood);
 
-    const randomIndex = arr => {
-        return Math.floor(Math.random() * arr.length);
-    };
+        if (subjects.length <= 0 || locations.length <= 0) {
+            throw new Error('No results were returned for your query.');
+        }
 
-    return generatePrompt(
-        subjects[randomIndex(subjects)].text_content,
-        locations[randomIndex(locations)].text_content,
-        locations[randomIndex(locations)].text_content,
-        locations[randomIndex(locations)].text_content
-    );
+        const randomIndex = arr => {
+            return Math.floor(Math.random() * arr.length);
+        };
+
+        return generatePrompt(
+            subjects[randomIndex(subjects)].text_content,
+            locations[randomIndex(locations)].text_content,
+            locations[randomIndex(locations)].text_content,
+            locations[randomIndex(locations)].text_content
+        );
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 module.exports = { getServerGreeting, getPrompt };
