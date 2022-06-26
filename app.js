@@ -1,8 +1,6 @@
 const app = require('./index');
 const port = process.env.PORT || 3000;
 const helpers = require('./helpers');
-var cors = require('cors');
-app.use(cors());
 
 app.get('/', async (req, res) => {
     res.send(`welcome to our art API`);
