@@ -5,7 +5,7 @@ const app = express();
 // app.use(cors());
 app.use(express.json());
 
-var whitelist = ['http://localhost:8080', 'https://arterator.netlify.app', '*'];
+var whitelist = '*';
 var corsOptions = {
     credentials: true,
     origin: function (origin, callback) {
